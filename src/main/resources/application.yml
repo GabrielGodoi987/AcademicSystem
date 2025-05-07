@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: AcademicSystem
+  datasource:
+    url: jdbc:mysql://localhost/academic
+    username: admin
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  profiles:
+    active: test
+server:
+  port: 8082
