@@ -22,6 +22,10 @@ public class AlunoService {
         return this.alunoRepository.findById(id).orElseThrow(() -> new NotFoundException("Aluno não encontrado"));
     }
 
+    public Aluno findByNome(String nome){
+        return this.alunoRepository.findByNome(nome);
+    }
+
     public Aluno create(Aluno aluno){
         return this.alunoRepository.save(aluno);
     }
