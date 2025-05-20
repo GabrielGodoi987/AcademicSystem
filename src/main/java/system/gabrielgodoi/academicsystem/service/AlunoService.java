@@ -14,37 +14,55 @@ import java.util.Optional;
 public class AlunoService {
     private final AlunoRepository alunoRepository;
 
-    public List<Aluno> findAll(){
+    public List<Aluno> findAll() {
         return this.alunoRepository.findAll();
     }
 
-    public Aluno findById(int id){
+    public Aluno findById(int id) {
         return this.alunoRepository.findById(id).orElseThrow(() -> new NotFoundException("Aluno não encontrado"));
     }
 
-    public Aluno findByNome(String nome){
+    public Aluno findByNome(String nome) {
         return this.alunoRepository.findByNome(nome);
     }
 
-    public Aluno create(Aluno aluno){
+    public List<Aluno> findByNomeStartingWith(String nome) {
+        return this.alunoRepository.findByNomeStartingWith(nome).orElseThrow(
+                () -> new NotFoundException("no one starts with: " + nome + " first name")
+        );
+    }
+
+    public List<Aluno> findByNomeEndsWith(String nome) {
+        return this.alunoRepository.findByNomeEndingWith(nome).orElseThrow(
+                () -> new NotFoundException("no one starts with: " + nome + " first name")
+        );
+    }
+
+    public List<Aluno> findByNomeContaining(String nome) {
+        return this.alunoRepository.findByNomeContaining(nome).orElseThrow(
+                () -> new NotFoundException("no one starts with: " + nome + " first name")
+        );
+    }
+
+    public Aluno create(Aluno aluno) {
         return this.alunoRepository.save(aluno);
     }
 
-    public Aluno update(int id, Aluno update){
+    public Aluno update(int id, Aluno update) {
         Aluno entity = this.alunoRepository.getReferenceById(id);
         this.updateData(entity, update);
         return this.alunoRepository.save(entity);
     }
 
-    public void delete(int id){
+    public void delete(int id) {
         Aluno aluno = this.findById(id);
-        if (aluno == null){
+        if (aluno == null) {
             throw new NotFoundException("Aluno não encontrado");
         }
         this.alunoRepository.deleteById(id);
     }
 
-    public void updateData(Aluno entity, Aluno update){
+    public void updateData(Aluno entity, Aluno update) {
         entity.setNome(update.getNome());
         entity.setEmail(update.getEmail());
         entity.setEndereco(update.getEndereco());

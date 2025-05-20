@@ -1,15 +1,19 @@
 spring:
   application:
     name: AcademicSystem
+
   datasource:
-    url: jdbc:mysql://localhost/academic
-    username: admin
-    password: 123456
+    url: jdbc:postgresql://localhost:5432/academic
+    username: postgres
+    password: docker
+
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
+
   profiles:
     active: test
+
 server:
   port: 8082
