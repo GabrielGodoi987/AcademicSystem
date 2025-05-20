@@ -28,7 +28,7 @@ public class AlunoController {
         return ResponseEntity.ok().body(aluno);
     }
 
-    @GetMapping("/primeiro-nome/{nome}")
+        @GetMapping("/primeiro-nome/{nome}")
     public ResponseEntity<List<Aluno>> findByFirstName(@PathVariable("nome") String nome){
         List<Aluno> alunoList = this.alunoService.findByNomeStartingWith(nome);
         return ResponseEntity.ok().body(alunoList);
