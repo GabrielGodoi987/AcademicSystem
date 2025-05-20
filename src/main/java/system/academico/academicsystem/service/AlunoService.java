@@ -1,13 +1,12 @@
-package system.gabrielgodoi.academicsystem.service;
+package system.academico.academicsystem.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import system.gabrielgodoi.academicsystem.exceptions.NotFoundException;
-import system.gabrielgodoi.academicsystem.model.Aluno;
-import system.gabrielgodoi.academicsystem.repositories.AlunoRepository;
+import system.academico.academicsystem.exceptions.NotFoundException;
+import system.academico.academicsystem.model.Aluno;
+import system.academico.academicsystem.repositories.AlunoRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service

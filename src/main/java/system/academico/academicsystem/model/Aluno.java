@@ -1,4 +1,4 @@
-package system.gabrielgodoi.academicsystem.model;
+package system.academico.academicsystem.model;
 
 import jakarta.persistence.*;
 import lombok.*;

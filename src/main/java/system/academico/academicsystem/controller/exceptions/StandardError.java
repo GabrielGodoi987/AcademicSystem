@@ -1,4 +1,4 @@
-package system.gabrielgodoi.academicsystem.controller.exceptions;
+package system.academico.academicsystem.controller.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

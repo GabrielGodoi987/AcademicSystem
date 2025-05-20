@@ -1,4 +1,4 @@
-package system.gabrielgodoi.academicsystem;
+package system.academico.academicsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

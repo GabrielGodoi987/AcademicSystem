@@ -1,11 +1,11 @@
-package system.gabrielgodoi.academicsystem.controller;
+package system.academico.academicsystem.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import system.gabrielgodoi.academicsystem.model.Aluno;
-import system.gabrielgodoi.academicsystem.service.AlunoService;
+import system.academico.academicsystem.model.Aluno;
+import system.academico.academicsystem.service.AlunoService;
 
 import java.net.URI;
 import java.util.List;

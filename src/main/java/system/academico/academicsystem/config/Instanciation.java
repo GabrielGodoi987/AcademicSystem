@@ -1,13 +1,12 @@
-package system.gabrielgodoi.academicsystem.config;
+package system.academico.academicsystem.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import system.gabrielgodoi.academicsystem.model.Aluno;
-import system.gabrielgodoi.academicsystem.repositories.AlunoRepository;
+import system.academico.academicsystem.model.Aluno;
+import system.academico.academicsystem.repositories.AlunoRepository;
 
-import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 

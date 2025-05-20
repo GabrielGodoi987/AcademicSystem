@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Página index</title>
+    <title>Alunos - Index</title>
 </head>
 <body>
-   <h1>olá <span th:text="${nome}"></span></h1>
+<h1>Bem-vindo ao Sistema Acadêmico</h1>
+
+<form th:action="@{/alunos/search}" method="get">
+    <label>
+        <input type="text" name="nome" placeholder="Buscar por nome"/>
+    </label>
+    <select name="tipo">
+        <option value="contains">Contém</option>
+        <option value="startsWith">Começa com</option>
+        <option value="endsWith">Termina com</option>
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+
+<a th:href="@{/alunos/list}">Ver todos os alunos</a> |
+<a th:href="@{/alunos/create}">Cadastrar novo aluno</a>
 </body>
 </html>
