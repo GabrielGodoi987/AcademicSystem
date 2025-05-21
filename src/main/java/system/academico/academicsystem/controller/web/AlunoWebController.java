@@ -23,7 +23,7 @@ public class AlunoWebController {
     }
 
     @GetMapping("/list")
-    public String listAll(Model model){
+    public String listAll(Model model) {
         List<Aluno> alunoList = this.alunoService.findAll();
         model.addAttribute("alunos", alunoList);
         return "list";
@@ -31,12 +31,20 @@ public class AlunoWebController {
 
     @GetMapping("/create")
     public String showCreateForm(Model model) {
-        model.addAttribute("aluno", new Aluno());
+        model
+                .addAttribute("aluno", new Aluno())
+                .addAttribute("novo", true);
+
         return "form";
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute("aluno") Aluno aluno) {
+    public String save(@ModelAttribute("aluno")  Aluno aluno) {
+        System.out.println(aluno.getRa());
+        if (aluno.getRa() != null) {
+            this.alunoService.update(aluno.getRa(), aluno);
+            return "redirect:/alunos/list";
+        }
         alunoService.create(aluno);
         return "redirect:/alunos/list";
     }
@@ -49,18 +57,20 @@ public class AlunoWebController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable int id, Model model) {
+    public String showEditForm(@PathVariable("id") Integer id, Model model) {
         Aluno aluno = alunoService.findById(id);
-        model.addAttribute("aluno", aluno);
+        model
+                .addAttribute("aluno", aluno)
+                .addAttribute("novo", false);
         return "form";
     }
 
     @GetMapping("/team")
-    public String showTeam(){
+    public String showTeam() {
         return "team";
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public String update(@PathVariable int id, @ModelAttribute("aluno") Aluno aluno) {
         alunoService.update(id, aluno);
         return "redirect:/alunos/list";

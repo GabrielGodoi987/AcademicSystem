@@ -3,6 +3,7 @@ package system.academico.academicsystem.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -10,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "tb_aluno")
 public class Aluno {
@@ -20,6 +22,6 @@ public class Aluno {
     private String nome;
     private String email;
     private String endereco;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private String periodo;
 }
