@@ -2,6 +2,84 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Alunos - Index</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f9fafb;
+          padding: 40px;
+          margin: 0;
+          color: #111827;
+        }
+
+        h1 {
+          text-align: center;
+          color: #1f2937;
+          margin-bottom: 30px;
+        }
+
+        form {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-bottom: 20px;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        input[type="text"] {
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          width: 200px;
+          background-color: #f3f4f6;
+        }
+
+        select {
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          background-color: #f3f4f6;
+        }
+
+        button {
+          background-color: #2563eb;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        button:hover {
+          background-color: #1d4ed8;
+        }
+
+        .links {
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .links a {
+          color: #2563eb;
+          text-decoration: none;
+          font-weight: bold;
+          margin: 0 10px;
+        }
+
+        .links a:hover {
+          text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <h1>Bem-vindo ao Sistema Acadêmico</h1>
@@ -19,6 +97,7 @@
 </form>
 
 <a th:href="@{/alunos/list}">Ver todos os alunos</a> |
-<a th:href="@{/alunos/create}">Cadastrar novo aluno</a>
+<a th:href="@{/alunos/create}">Cadastrar novo aluno</a> |
+<a th:href="@{/alunos/team}">Time do Projeto</a>
 </body>
 </html>

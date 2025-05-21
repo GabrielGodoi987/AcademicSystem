@@ -55,6 +55,11 @@ public class AlunoWebController {
         return "form";
     }
 
+    @GetMapping("/team")
+    public String showTeam(){
+        return "team";
+    }
+
     @PostMapping("/update/{id}")
     public String update(@PathVariable int id, @ModelAttribute("aluno") Aluno aluno) {
         alunoService.update(id, aluno);
